@@ -1,0 +1,25 @@
+name: Apply i4t customization
+description: Validate and apply the i4t.com customization archive before compiling RustDesk-on
+runs:
+  using: composite
+  steps:
+    - name: Install image conversion dependency
+      if: ${{ hashFiles('i4t-customization.zip') != '' }}
+      shell: bash
+      run: |
+        PYTHON=python3
+        command -v "$PYTHON" >/dev/null 2>&1 || PYTHON=python
+        "$PYTHON" -m pip install --disable-pip-version-check --quiet Pillow==12.0.0
+    - name: Validate and apply customization
+      if: ${{ hashFiles('i4t-customization.zip') != '' }}
+      shell: bash
+      run: |
+        PYTHON=python3
+        command -v "$PYTHON" >/dev/null 2>&1 || PYTHON=python
+        "$PYTHON" "${{ github.workspace }}/scripts/apply_i4t_customization.py" "${{ github.workspace }}/i4t-customization.zip"
+    - name: Explain missing customization
+      if: ${{ hashFiles('i4t-customization.zip') == '' }}
+      shell: bash
+      run: |
+        echo "::error title=缺少配置包::请先从 i4t.com 下载 i4t-customization.zip，并上传到仓库根目录。"
+        exit 2

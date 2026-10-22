@@ -1,0 +1,17 @@
+<svg width="210" height="64" viewBox="0 0 210 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mark" x1="4" y1="8" x2="58" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="0.55" stop-color="#1167FF"/>
+      <stop offset="1" stop-color="#13C2C2"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="208" height="62" rx="14" fill="white"/>
+  <path d="M23 17H17V47H23V17Z" fill="url(#mark)"/>
+  <path d="M31 17H25V47H31V17Z" fill="url(#mark)" fill-opacity="0.78"/>
+  <path d="M44 17H34V24H44V47H51V24H59V17H51V10H44V17Z" fill="url(#mark)"/>
+  <path d="M17 32H36" stroke="#0B4FE8" stroke-width="6" stroke-linecap="round"/>
+  <text x="70" y="38" fill="#0B1B43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800">i4t</text>
+  <text x="120" y="38" fill="#1769FF" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">.com</text>
+  <text x="71" y="54" fill="#5A6680" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="500">专注技术分享与开源实践</text>
+</svg>
